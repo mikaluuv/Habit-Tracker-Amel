@@ -55,7 +55,7 @@
 .day {
     width: 40px;
     height: 40px;
-    border-radius: 10%;
+    border-radius: 90%;
     border: 2px solid #000000;
     display: flex;
     flex-direction: column;
@@ -66,11 +66,13 @@
 
 }
 
-.day-today {
-    border-color: #7f8c8d;
-background-color: #f5a5f1;
-border-radius: 10%;
-    border: 2px solid #000000;
+     .day-today {
+     background-color: #f5d6f3;
+     border-radius: 20%;
+     flex-direction: column;
+     justify-content: center;
+     margin-bottom: 20px;
+     gap: 2;
 }
 
 
@@ -81,7 +83,14 @@ border-radius: 10%;
         padding: 20px;
         margin-bottom: 15px;
         border-radius: 15px;
+        padding-right: 20px; 
+    transition: transform 0.3s ease;
       }
+
+      .habit-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
 
       .habit-fitness {
             background: linear-gradient(135deg, #ffe6e6, #ffcccc);
@@ -95,11 +104,11 @@ border-radius: 10%;
         }
 
         .habit-ontbijt {
-            background: linear-gradient(135deg, #e8fae5, #c1f1b9);
+            background: linear-gradient(135deg, #e8fae5, #e2f6de);
         }
 
          .habit-wandelen {
-            background: linear-gradient(135deg, #fae5f9, #f5a5f1);
+            background: linear-gradient(135deg, #fae5f9, #f5d2f3);
         }
 
       .habit-content {

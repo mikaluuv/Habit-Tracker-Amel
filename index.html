@@ -46,36 +46,43 @@
       }
 
       .week-nav {
-    display: flex;
-    gap: 2px;
-    justify-content: center;
-    margin-bottom: 20px;
-}
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 30px;
+      }
 
-.day {
-    width: 40px;
-    height: 40px;
-    border-radius: 90%;
-    border: 2px solid #000000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 10px;
-    font-weight: bold;
+      .day-circle {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: 2px solid #e0e0e0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 10px;
+        text-align: center;
+      }
 
-}
+      .day-circle.completed {
+        background: #27ae60;
+        border-color: #27ae60;
+        color: white;
+      }
 
-     .day-today {
-     background-color: #f5d6f3;
-     border-radius: 20%;
-     flex-direction: column;
-     justify-content: center;
-     margin-bottom: 20px;
-     gap: 2;
-}
+      .day-circle.today {
+        border-color: #3498db;
+        background: #3498db;
+        color: white;
+      }
 
-
+      .day-circle:hover {
+        transform: scale(1.1);
+      }
 
       .habit-item {
         display: flex;
@@ -83,33 +90,33 @@
         padding: 20px;
         margin-bottom: 15px;
         border-radius: 15px;
-        padding-right: 20px; 
-    transition: transform 0.3s ease;
+        padding-right: 20px;
+        transition: transform 0.3s ease;
       }
 
       .habit-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-}
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+      }
 
       .habit-fitness {
-            background: linear-gradient(135deg, #ffe6e6, #ffcccc);
-        }
-        .habit-lezen {
-            background: linear-gradient(135deg, #e6f3ff, #cce6ff);
-        }
+        background: linear-gradient(135deg, #ffe6e6, #ffcccc);
+      }
+      .habit-lezen {
+        background: linear-gradient(135deg, #e6f3ff, #cce6ff);
+      }
 
-        .habit-water {
-            background: linear-gradient(135deg, #fff9e6, #fff0cc);
-        }
+      .habit-water {
+        background: linear-gradient(135deg, #fff9e6, #fff0cc);
+      }
 
-        .habit-ontbijt {
-            background: linear-gradient(135deg, #e8fae5, #e2f6de);
-        }
+      .habit-ontbijt {
+        background: linear-gradient(135deg, #e8fae5, #e2f6de);
+      }
 
-         .habit-wandelen {
-            background: linear-gradient(135deg, #fae5f9, #f5d2f3);
-        }
+      .habit-wandelen {
+        background: linear-gradient(135deg, #fae5f9, #f5d2f3);
+      }
 
       .habit-content {
         display: flex;
@@ -139,7 +146,34 @@
         font-weight: 500;
       }
 
-      
+      .habit-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        margin-bottom: 15px;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .habit-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+      }
+
+      .habit-item::after {
+        content: "→";
+        font-size: 20px;
+        color: #7f8c8d;
+        transition: all 0.3s ease;
+      }
+
+      .habit-item:hover::after {
+        transform: translateX(5px);
+        color: #3498db;
+      }
     </style>
   </head>
   <body>
@@ -149,66 +183,65 @@
         <div class="date-header">29/02/2025</div>
       </div>
 
-      
-<div class="week-nav">
-    <div class="day">MA<br>26</div>
-    <div class="day completed">DI<br>27</div>
-    <div class="day completed">WO<br>28</div>
-    <div class="day-today">DO<br>29</div> 
-    <div class="day">VR<br>1</div>
-    <div class="day">ZA<br>2</div>
-    <div class="day">ZO<br>3</div>
-</div>
-
-<div class="habits-list">
-            <div class="habit-item habit-fitness">
-                <div class="habit-content">
-                    <span class="habit-icon">🏃‍♂️</span>
-                    <div class="habit-info">
-                        <span class="habit-text">Fitness</span>
-                        <span class="habit-progress">20/30min </span>
-                    </div>
-                </div>
-            </div>
-
-    <div class="habit-item habit-lezen">
-      <div class="habit-content">
-        <span class="habit-icon">📚</span>
-        <div class="habit-info">
-          <span class="habit-text">Lezen</span>
-          <span class="habit-progress">10/20 pagina's </span>
-        </div>
+      <div class="week-nav">
+        <div class="day-circle completed">MA<br />26</div>
+        <div class="day-circle completed">DI<br />27</div>
+        <div class="day-circle completed">WO<br />28</div>
+        <div class="day-circle today">DO<br />29</div>
+        <div class="day-circle">VR<br />1</div>
+        <div class="day-circle">ZA<br />2</div>
+        <div class="day-circle">ZO<br />3</div>
       </div>
-    </div>
 
-    <div class="habit-item habit-water">
-                <div class="habit-content">
-                    <span class="habit-icon">💧</span>
-                    <div class="habit-info">
-                        <span class="habit-text">Water drinken</span>
-                        <span class="habit-progress">200ml/1,5L </span>
-                    </div>
-                </div>
+      <div class="habits-list">
+        <div class="habit-item habit-fitness">
+          <div class="habit-content">
+            <span class="habit-icon">🏃‍♂️</span>
+            <div class="habit-info">
+              <span class="habit-text">Fitness</span>
+              <span class="habit-progress">20/30min </span>
             </div>
+          </div>
+        </div>
 
-              <div class="habit-item habit-ontbijt">
-                <div class="habit-content">
-                    <span class="habit-icon">🥞</span>
-                    <div class="habit-info">
-                        <span class="habit-text">Ontbijt</span>
-                        <span class="habit-progress">1/1 klaar ✅ </span>
-                    </div>
-                </div>
+        <div class="habit-item habit-lezen">
+          <div class="habit-content">
+            <span class="habit-icon">📚</span>
+            <div class="habit-info">
+              <span class="habit-text">Lezen</span>
+              <span class="habit-progress">10/20 pagina's </span>
             </div>
+          </div>
+        </div>
 
-            <div class="habit-item habit-wandelen">
-                <div class="habit-content">
-                    <span class="habit-icon">🚶‍♀️</span>
-                    <div class="habit-info">
-                        <span class="habit-text">Wandelen</span>
-                        <span class="habit-progress">5760/10000 stappen </span>
-                    </div>
-                </div>
+        <div class="habit-item habit-water">
+          <div class="habit-content">
+            <span class="habit-icon">💧</span>
+            <div class="habit-info">
+              <span class="habit-text">Water drinken</span>
+              <span class="habit-progress">200ml/1,5L </span>
             </div>
+          </div>
+        </div>
+
+        <div class="habit-item habit-ontbijt">
+          <div class="habit-content">
+            <span class="habit-icon">🥞</span>
+            <div class="habit-info">
+              <span class="habit-text">Ontbijt</span>
+              <span class="habit-progress">1/1 klaar ✅ </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="habit-item habit-wandelen">
+          <div class="habit-content">
+            <span class="habit-icon">🚶‍♀️</span>
+            <div class="habit-info">
+              <span class="habit-text">Wandelen</span>
+              <span class="habit-progress">5760/10000 stappen </span>
+            </div>
+       
+      
   </body>
 </html>

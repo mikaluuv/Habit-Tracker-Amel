@@ -79,12 +79,12 @@
       }
 
       .btn-groen {
-        background: linear-gradient(135deg, #fae5f9, #f5d2f3);
+        background: linear-gradient(135deg, #ffe6e6, #ffcccc);
         color: #7f8c8d;
       }
 
       .btn-rood {
-        background: linear-gradient(135deg, #fae5f9, #f5d2f3);
+        background: linear-gradient(135deg, #ffe6e6, #ffcccc);
         color: #7f8c8d;
       }
 
@@ -125,7 +125,7 @@
       .back-btn {
         font-size: 20px;
         background-color: #f8f9fa;
-        border-radius: 1px;
+        border-radius: 5px;
         padding: 10px;
         border: none;
       }
@@ -134,12 +134,12 @@
   <body>
     <div class="container">
       <div class="header">
-        <button class="back-btn">←</button>
+        <button class="back-btn" onclick="showHome('←')">←</button>
         <h1 class="habit-title">🏃‍♂️ Fitness</h1>
       </div>
 
       <div class="progress-box">
-        <div class="progress-number">20</div>
+        <div class="progress-number" id="currentProgress">20</div>
         <div class="progress-text">van 30 minuten</div>
       </div>
 
@@ -147,12 +147,18 @@
         <h2 class="section-title">Acties</h2>
 
         <div class="button-actie">
-          <button class="btn btn-groen">+ 5 minuten</button>
-          <button class="btn btn-rood">- 5 minuten</button>
+          <button class="btn btn-groen" onclick="addMinutes()">
+            + 5 minuten
+          </button>
+          <button class="btn btn-rood" onclick="removeMinutes()">
+            - 5 minuten
+          </button>
         </div>
 
         <div class="button-actie">
-          <button class="btn btn-klaar">Klaar voor vandaag ✅</button>
+          <button class="btn btn-klaar" onclick="completeTask()">
+            Klaar voor vandaag ✅
+          </button>
         </div>
       </div>
 
@@ -165,10 +171,32 @@
       </div>
 
       <div>
-        <button class="save-btn">Opslaan</button>
+        <button class="save-btn" onclick="saveData()">Opslaan</button>
       </div>
     </div>
 
-    <script></script>
+    <script>
+      function showHome(home) {
+        window.location.href = "index.html";
+      }
+
+      let currentMinutes = 20;
+
+      function addMinutes() {
+        currentMinutes = currentMinutes + 5;
+        document.querySelector("#currentProgress").textContent = currentMinutes;
+      }
+
+      function removeMinutes() {
+        currentMinutes = currentMinutes - 5;
+        document.querySelector("#currentProgress").textContent = currentMinutes;
+      }
+
+      function completeTask() {}
+
+      function saveData() {
+        alert("opgeslagen!");
+      }
+    </script>
   </body>
 </html>

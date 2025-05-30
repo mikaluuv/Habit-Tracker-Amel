@@ -42,16 +42,16 @@
       }
 
       .progress-box {
-        padding: 40px;
+        padding: 20px;
         margin-bottom: 25px;
-        background-color: #e9ecef;
+        background-color: #f8f9fa;
         border-radius: 20px;
         text-align: center;
       }
 
       .progress-number {
         font-size: 48px;
-        color: #27ae60;
+        color: #2c3e50;
         font-weight: bold;
       }
 
@@ -59,28 +59,42 @@
         font-size: 20px;
         color: #9d9d9d;
         margin-top: 10px;
-        font-weight: lighter;
       }
 
-      .section-title {
-        font-size: 20px;
-        font-weight: 600;
-        color: #2c3e50;
+      .button-actie {
+        display: flex;
+        gap: 15px;
         margin-bottom: 15px;
+        margin-top: 15px;
       }
 
       .btn {
-        display: block;
-        width: 100%;
+        flex: 1;
         padding: 15px;
         border: none;
-        border-radius: 17px;
+        border-radius: 12px;
         font-size: 16px;
         font-weight: 600;
         cursor: pointer;
-        margin-bottom: 10px;
-        background: #3498db;
-        color: white;
+      }
+
+      .btn-groen {
+        background: linear-gradient(135deg, #fae5f9, #f5d2f3);
+        color: #7f8c8d;
+      }
+
+      .btn-rood {
+        background: linear-gradient(135deg, #fae5f9, #f5d2f3);
+        color: #7f8c8d;
+      }
+
+      .btn-klaar {
+        background: linear-gradient(135deg, #e8fae5, #e2f6de);
+        color: #7f8c8d;
+      }
+
+      .section-title {
+        margin-bottom: 15px;
       }
 
       .notes-input {
@@ -103,9 +117,17 @@
         font-weight: 600;
         cursor: pointer;
         margin-bottom: 10px;
-        background: #3498db;
-        color: white;
+        background: linear-gradient(135deg, #e8fae5, #e2f6de);
+        color: #7f8c8d;
         margin-top: 20px;
+      }
+
+      .back-btn {
+        font-size: 20px;
+        background-color: #f8f9fa;
+        border-radius: 1px;
+        padding: 10px;
+        border: none;
       }
     </style>
   </head>
@@ -123,9 +145,15 @@
 
       <div class="buttons-section">
         <h2 class="section-title">Acties</h2>
-        <button class="btn">+ 5 minuten</button>
-        <button class="btn">- 5 minuten</button>
-        <button class="btn">Klaar voor vandaag ✅</button>
+
+        <div class="button-actie">
+          <button class="btn btn-groen">+ 5 minuten</button>
+          <button class="btn btn-rood">- 5 minuten</button>
+        </div>
+
+        <div class="button-actie">
+          <button class="btn btn-klaar">Klaar voor vandaag ✅</button>
+        </div>
       </div>
 
       <div>
